@@ -195,7 +195,7 @@ describe("shelf.js", function() {
 
       var titles = listTitles(fantasyShelf);
 
-      assert.deepEqual(titles, ["Hyperion", "Dune", "Ender's Game"]);
+      assert.deepEqual(titles, "Hyperion, Dune, Ender's Game");
     });
   });
 
