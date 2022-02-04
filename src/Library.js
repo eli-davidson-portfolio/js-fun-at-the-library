@@ -1,39 +1,39 @@
 function createLibrary(name) {
-  var denverLibrary = {};
+  var library = {};
+  
   if(name !== undefined) {
-    denverLibrary.name = name;
+    library.name = name;
   }
-  denverLibrary.shelves = {
+
+  library.shelves = {
     fantasy: [],
     fiction: [],
     nonFiction: []
   };
-  return denverLibrary;
+  return library;
 }
 
 function addBook(library, book) {
-  if (book.genre === 'fantasy') {
-    library.shelves.fantasy.push(book)
-  } else if (book.genre === 'fiction') {
-    library.shelves.fiction.push(book)
-  } else {
-    library.shelves.nonFiction.push(book)
-  }
+    library.shelves[book.genre].push(book)
 }
 
 function checkoutBook (library, bookTitle) {
-
-  if (library.shelves.fantasy.length > 0 && library.shelves.fantasy[0].title === bookTitle)  {
-      library.shelves.fantasy.pop()
-  } else if (library.shelves.nonFiction.length > 0 && library.shelves.nonFiction[0].title === bookTitle)  { 
-      library.shelves.nonFiction.pop()    
-  } else if (library.shelves.fiction.length > 0 && library.shelves.fiction[0].title === bookTitle) {
-      library.shelves.fiction.pop()
-    } else {
-    return `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}`
-    }
-  return `You have now checked out ${bookTitle} from the ${library.name}`
+  var availableGenres = [
+    'nonFiction',
+    'fiction',
+    'fantasy',
+  ] 
   
+  for (var i = 0; i < availableGenres.length; i++) {
+    var currentGenre = availableGenres[i];
+    for (var j = 0; j < library.shelves[currentGenre].length; j++) {
+      if (library.shelves[currentGenre][j].title === bookTitle) {
+        library.shelves[currentGenre].splice(j, 1)
+        return `You have now checked out ${bookTitle} from the ${library.name}`
+      }
+    }
+  } 
+  return `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}`
 }
 
 module.exports = {
