@@ -8,7 +8,6 @@ function buildMainCharacter(name, age, pronouns) {
     age: age,
     pronouns: pronouns
   };
-
   return mainCharacter;
 }
 
@@ -30,7 +29,6 @@ function writeBook(bookTitle, bookCharacter, genre) {
     genre: genre,
     pageCount: calculatePageCount(bookTitle)
   };
-
   return book;
 }
 

@@ -68,7 +68,7 @@ console.log(`OK, maybe I could read that in a dat and a half.`);
 if(isFavorite) {
     console.log(`My Favorite book is ${title}!`);
 } else {
-    console.log(`I recently read the ${title} book`)
+    console.log(`I recently read the ${title} book`);
 }
 
 //------------------------- Arrays -------------------------//

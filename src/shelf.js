@@ -6,7 +6,7 @@ function shelfBook(book, shelf) {
 function unshelfBook(bookTitle, shelf) {
   for (var i = 0; i < shelf.length; i++) {
     if (bookTitle === shelf[i].title) {
-      shelf.splice(i, 1)
+      shelf.splice(i, 1);
     }
   }
 }
@@ -14,7 +14,7 @@ function unshelfBook(bookTitle, shelf) {
 function listTitles(shelf) {
  var titles = [];
  for(var i = 0; i < shelf.length; i++) {
-   titles.push(shelf[i].title)
+   titles.push(shelf[i].title);
  }
  return titles.join(', ');
 }
@@ -25,8 +25,7 @@ function searchShelf(shelf, bookTitle) {
       return true;
     }
   }
-  return false
-  
+  return false;
 }
 
 module.exports = {

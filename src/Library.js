@@ -9,7 +9,8 @@ function createLibrary(name) {
     fantasy: [],
     fiction: [],
     nonFiction: []
-  };
+  }
+
   return library;
 }
 
@@ -19,7 +20,6 @@ function addBook(library, book) {
 }
 
 function checkoutBook (library, bookTitle) {
-  
   //Has a list of available genres
   //In the future, I would like to make this a dynamic list
   var availableGenres = [
@@ -49,6 +49,6 @@ function checkoutBook (library, bookTitle) {
 
 module.exports = {
    createLibrary,
-    addBook,
+   addBook,
    checkoutBook
 };
