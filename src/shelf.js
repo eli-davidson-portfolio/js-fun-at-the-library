@@ -3,6 +3,7 @@ function shelfBook(book, shelf) {
     shelf.unshift(book);
   }
 }
+
 function unshelfBook(bookTitle, shelf) {
   for (var i = 0; i < shelf.length; i++) {
     if (bookTitle === shelf[i].title) {
