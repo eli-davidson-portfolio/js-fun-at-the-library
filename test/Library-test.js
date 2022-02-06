@@ -103,7 +103,7 @@ describe("library.js", function() {
       addBook(denverLibrary, bornACrime);
       addBook(denverLibrary, prideAndPrejudice);
 
-      var result1 = checkoutBook(denverLibrary, "Pride and Prejudice", "fantasy");
+      var result1 = checkoutBook(denverLibrary, "Pride and Prejudice", "fiction");
 
       assert.deepEqual(denverLibrary.shelves, {fantasy: [dracula], fiction: [], nonFiction: [bornACrime]});;
       assert.equal(result1, "You have now checked out Pride and Prejudice from the Denver Public Library");

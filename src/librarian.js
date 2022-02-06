@@ -17,10 +17,9 @@ class Librarian {
     ]
   
     for (var i = 0; i < availableGenres.length; i++) {
-      var currentGenre = availableGenres[i];
-      for (var j = 0; j < this.library.shelves[currentGenre].length; j++) {
-        if (this.library.shelves[currentGenre][j].title === bookTitle) {
-          this.library.shelves[currentGenre].splice(j, 1);
+      for (var j = 0; j < this.library.shelves[availableGenres[i]].length; j++) {
+        if (this.library.shelves[availableGenres[i]][j].title === bookTitle) {
+          this.library.shelves[availableGenres[i]].splice(j, 1);
           return `Yes, we have ${bookTitle}`
         }
       }
