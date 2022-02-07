@@ -24,7 +24,7 @@ class Librarian {
     ]
     //loop through each available genre
     for (var i = 0; i < availableGenres.length; i++) {
-      //loop through each bool on the shelf
+      //loop through each book on the shelf
       for (var j = 0; j < this.library.shelves[availableGenres[i]].length; j++) {
         //if the target book is found
         if (this.library.shelves[availableGenres[i]][j].title === bookTitle) {
